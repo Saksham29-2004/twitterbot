@@ -1,38 +1,142 @@
-.App {
+/* Global styles */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #121212;
+  color: #fff;
+  margin: 0;
+  padding: 20px;
+}
+
+/* Dashboard container */
+.dashboard-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #1e1e1e;
+  border-radius: 8px;
+}
+
+/* Title */
+.dashboard-title {
+  font-size: 2rem;
   text-align: center;
+  color: #fff;
+  margin-bottom: 20px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Loading Spinner */
+.loading-spinner {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+  height: 100vh;
+  font-size: 1.5rem;
+}
+
+.spinner {
+  border: 8px solid #f3f3f3;
+  border-top: 8px solid #3498db;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Table styling */
+.article-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  background-color: #1e1e1e;
+  color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* Table Headers */
+.article-table th {
+  background-color: #333;
+  padding: 12px;
+  text-align: left;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.article-table th, .article-table td {
+  border-bottom: 1px solid #444;
+}
+
+/* Table rows */
+.article-table tr:hover {
+  background-color: #444;
+}
+
+.article-table td {
+  padding: 12px;
+  font-size: 0.95rem;
+  color: #bbb;
+}
+
+/* Status Badge */
+.status-badge {
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 12px;
+}
+
+.status-badge.tweeted {
+  background-color: #bbf7d0;
+}
+
+.status-badge.failed {
+  background-color: #fecaca;
+}
+
+.status-badge.pending {
+  background-color: #fde68a;
+}
+
+/* Button Styling */
+.btn {
+  padding: 6px 12px;
+  font-size: 14px;
+  border-radius: 4px;
+  cursor: pointer;
+  border: none;
+  transition: background-color 0.3s ease;
+}
+
+.tweet-btn {
+  background-color: #1da1f2;
+  color: white;
+  margin-right: 10px;
+}
+
+.tweet-btn:hover {
+  background-color: #0d85d4;
+}
+
+.retry-btn {
+  background-color: #f39c12;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.retry-btn:hover {
+  background-color: #e67e22;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .article-table th, .article-table td {
+    padding: 8px;
   }
-  to {
-    transform: rotate(360deg);
+
+  .btn {
+    font-size: 12px;
   }
 }
